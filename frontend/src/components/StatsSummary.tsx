@@ -63,7 +63,6 @@ export function StatsSummary({ predictions, connectionStatus }: Props) {
       ? predictions.reduce((s, p) => s + p.confidence, 0) / total
       : 0
   const driftCount = predictions.filter((p) => p.drift_detected).length
-  const throughput = total // over the stored window
 
   return (
     <div

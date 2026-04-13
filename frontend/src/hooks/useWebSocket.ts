@@ -59,8 +59,8 @@ export function useWebSocket(): UseWebSocketResult {
 
         if (msg.type === 'prediction' && msg.data) {
           const entry: Prediction = {
-            id: `${Date.now()}-${Math.random()}`,
             ...msg.data,
+            id: `${Date.now()}-${Math.random()}`,
           }
           setPredictions((prev) => [entry, ...prev].slice(0, MAX_PREDICTIONS))
         }
