@@ -5,7 +5,7 @@ Real-time ML model monitoring with drift detection, WebSocket prediction streami
 **Live ML Model Monitoring Dashboard** — real-time prediction feed, drift detection, and observability.
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Tests](https://img.shields.io/badge/tests-24-blue)
+![Tests](https://img.shields.io/badge/tests-47-blue)
 ![Deploy](https://img.shields.io/badge/deploy-Render-purple)
 
 ## Demo

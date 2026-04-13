@@ -32,7 +32,8 @@ export function ModelHealth() {
 
     async function fetchHealth() {
       try {
-        const res = await fetch('http://localhost:8000/health')
+        const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
+        const res = await fetch(`${apiUrl}/health`)
         if (!res.ok) throw new Error('non-ok')
         const data = await res.json() as HealthResponse
         if (!cancelled) {
