@@ -20,18 +20,18 @@ Real-time ML model monitoring with drift detection, WebSocket prediction streami
 
 ```
 ┌──────────────────┐      WebSocket       ┌──────────────────┐
-│   React Frontend │◄────────────────────►│  FastAPI Backend  │
-│   (Recharts, WS) │                      │  (Model Serving)  │
+│   React Frontend │◄────────────────────►│  FastAPI Backend │
+│   (Recharts, WS) │                      │  (Model Serving) │
 └──────────────────┘                      └────────┬─────────┘
                                                    │
                                           ┌────────▼─────────┐
-                                          │   Prometheus      │
-                                          │   (Metrics)       │
+                                          │   Prometheus     │
+                                          │   (Metrics)      │
                                           └────────┬─────────┘
                                                    │
                                           ┌────────▼─────────┐
-                                          │   Grafana         │
-                                          │   (Dashboards)    │
+                                          │   Grafana        │
+                                          │   (Dashboards)   │
                                           └──────────────────┘
 ```
 
