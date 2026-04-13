@@ -1,10 +1,18 @@
 # SentinelBoard
 
+Real-time ML model monitoring with drift detection, WebSocket prediction streaming, and Prometheus observability.
+
 **Live ML Model Monitoring Dashboard** — real-time prediction feed, drift detection, and observability.
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Tests](https://img.shields.io/badge/tests-40%2B-blue)
+![Tests](https://img.shields.io/badge/tests-24-blue)
 ![Deploy](https://img.shields.io/badge/deploy-Render-purple)
+
+## Demo
+
+| Normal Operation | Drift Detected |
+|:---:|:---:|
+| ![Normal Operation](docs/images/dashboard-healthy.png) | ![Drift Detected](docs/images/dashboard-critical.png) |
 
 ## Architecture
 
@@ -33,6 +41,15 @@
 - **Prometheus metrics**: predictions/sec, latency histogram (p50/p95/p99), drift scores
 - **Grafana dashboards**: pre-built panels for model monitoring
 - **Auto-deploy**: GitHub Actions → Render on push to main
+
+## Drift Detection
+
+SentinelBoard uses **Population Stability Index (PSI)** as the primary drift signal, with a configurable threshold (default `0.2`). PSI is computed over a rolling window of 200 observations against a reference distribution captured at training time.
+
+- **PSI threshold**: configurable via `SB_DRIFT_PSI_THRESHOLD` (default `0.2`). Values below `0.1` indicate stable distribution; above `0.2` indicate significant drift.
+- **KS-test**: runs as secondary validation per feature, providing a p-value alongside the PSI score.
+- **Real-time alerts**: when PSI exceeds the threshold, a `drift_detected: true` flag is broadcast over WebSocket to all connected clients instantly.
+- **Traffic scripts**: use `simulate_traffic.py` to generate normal load and `inject_drift.py` to shift the input distribution and trigger alerts.
 
 ## Quick Start
 
