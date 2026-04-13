@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: sentinelboard-api
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    envVars:
+      - key: MODEL_PATH
+        value: /app/models/weather_model.joblib
+      - key: PROMETHEUS_ENABLED
+        value: "true"
+    healthCheckPath: /health
+    plan: free
+
+  - type: web
+    name: sentinelboard-ui
+    runtime: static
+    buildCommand: cd frontend && npm ci && npm run build
+    staticPublishPath: frontend/dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    plan: free
