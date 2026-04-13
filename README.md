@@ -10,6 +10,8 @@ Real-time ML model monitoring with drift detection, WebSocket prediction streami
 
 ## Demo
 
+**[Live Dashboard →](https://sentinelboard-ui.onrender.com)** · **[API Docs →](https://sentinelboard-api.onrender.com/docs)**
+
 | Normal Operation | Drift Detected |
 |:---:|:---:|
 | ![Normal Operation](docs/images/dashboard-healthy.png) | ![Drift Detected](docs/images/dashboard-critical.png) |
