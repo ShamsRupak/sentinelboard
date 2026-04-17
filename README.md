@@ -12,7 +12,7 @@ Real-time ML model monitoring with drift detection, WebSocket prediction streami
 
 Deployed on AWS EC2 (t3.micro, Ubuntu 24.04) via Docker Compose.
 
-![EC2 Deployed](EC2%20Deployed.webp)
+![EC2 Deployed](docs/images/EC2%20Deployed.webp)
 
 
 **Live URL:** http://13.218.118.77:3000 (start EC2 instance to activate)
