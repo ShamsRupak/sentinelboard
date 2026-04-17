@@ -8,6 +8,15 @@ Real-time ML model monitoring with drift detection, WebSocket prediction streami
 ![Tests](https://img.shields.io/badge/tests-47-blue)
 ![Deploy](https://img.shields.io/badge/deploy-Render-purple)
 
+## Live Deployment
+
+Deployed on AWS EC2 (t3.micro, Ubuntu 24.04) via Docker Compose.
+
+![EC2 Deployed](docs/EC2_Deployed.webp)
+
+
+**Live URL:** http://13.218.118.77:3000 (start EC2 instance to activate)
+
 ## Demo
 
 **[Live Dashboard →](https://sentinelboard-ui.onrender.com)** · **[API Docs →](https://sentinelboard-api.onrender.com/docs)**
